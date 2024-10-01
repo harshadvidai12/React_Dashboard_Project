@@ -1,0 +1,172 @@
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  thead {
+    background-color: #ffffff;
+    /* border-bottom: 1px solid #F2F3F3; */
+  }
+  thead tr{
+    border-bottom: 2px solid #F2F3F3;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  th {
+    font-weight: 600;
+    color: #4A5157;
+  }
+ 
+  tbody tr{
+    border-bottom: 10px solid white;
+    background-color: #FAFAFA;
+  }
+
+  tbody tr:hover{
+    background-color: #F9F7FF;
+  }
+  
+  /* tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f4f0ff;
+  } */
+  
+  .patientInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mrInfo {
+    font-size: 16px;
+    font-weight: 700px;
+    color: #3768C5;
+    font-size: 12px;
+  }
+  
+  .mrInfo a {
+    font-size: 14px;
+    font-weight: 700px;
+    color: #3768C5;
+    text-decoration: none;
+  }
+  .anchorTag{
+    color: #37C577;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  .uploadTag{
+    color: #7D54F3;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  
+  .completed {
+    background-color: #F4FFF8;
+    color: #47B35F;
+    padding: 4px 12px;
+    border: 1px solid #37C577;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .pending {
+    background-color: #FFF8EE;
+    color: #FFAA38;
+    border: 1px solid #EC9D3E;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+.totalContainer {
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.totalNumber {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.statusContainer {
+    display: flex;
+    align-items: center;
+}
+
+.statusItem {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.statusItem:last-child {
+    margin-right: 0;
+}
+
+.notStartedIcon,
+.pendingIcon,
+.completedIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.notStartedIcon {
+    background-color: #6c757d; /* Grey color for "Not Started" */
+}
+
+.pendingIcon {
+    background-color: #f4a261; /* Orange color for "Pending" */
+}
+
+.completedIcon {
+    background-color: #2a9d8f; /* Green color for "Completed" */
+}
+
+.footerIconLabel{
+    font-size: 14px;
+    font-weight: 500;
+    color: #272D36;
+}
