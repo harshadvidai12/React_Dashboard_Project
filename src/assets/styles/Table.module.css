@@ -170,3 +170,30 @@
     font-weight: 500;
     color: #272D36;
 }
+.checkBoxLabel{
+  padding-left: 10px;
+}
+.checkboxText{
+  align-items: center;
+  align-content: center; 
+  vertical-align: middle;
+  padding: 1rem;
+  flex-basis: content;
+  padding-left: 10px;
+  display: flex;
+
+}
+.headerNameCss{
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+}
+.icon>span {
+  padding-left: 10px;
+  text-decoration: none;
+}
+.checkboxText>input{
+  height: 16px;
+  width: 16px;
+}

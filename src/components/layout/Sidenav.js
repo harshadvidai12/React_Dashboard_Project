@@ -198,7 +198,7 @@ function Sidenav({ color }) {
               <span className="label">Patients</span>
             </NavLink>
           </Menu.Item>
-          <Menu.Item key="3">
+          {/* <Menu.Item key="3">
             <NavLink to="/billing">
               <span
                 className="icon"
@@ -237,7 +237,7 @@ function Sidenav({ color }) {
               </span>
               <span className="label">Support</span>
             </NavLink>
-          </Menu.Item>
+          </Menu.Item> */}
           {/* <Menu.Item key="4">
           <NavLink to="/rtl">
             <span
@@ -282,7 +282,7 @@ function Sidenav({ color }) {
         </Menu>
       </div>
       <div>
-        <Menu theme="light" mode="inline">
+        {/* <Menu theme="light" mode="inline">
           <Menu.Item key="1">
             <NavLink to="/Logout">
               <span
@@ -296,7 +296,7 @@ function Sidenav({ color }) {
               <span className="label">Logout</span>
             </NavLink>
           </Menu.Item>
-        </Menu>
+        </Menu> */}
 
         <div class="footerbox">
         <span class="icon" ><img src={bulb} alt="" /></span>

@@ -177,7 +177,7 @@ function BarChartAge() {
                         },
                     }}
                     series={data[selectedOption][activeButton === "patients" ? 'Total Patients' : 'Total Embryo Graded'].series}
-                    height={450}
+                    height={436}
                     type="bar"
                 />
             </div>

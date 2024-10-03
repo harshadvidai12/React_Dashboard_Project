@@ -67,15 +67,15 @@ function ProgressChart() {
                     <div className="progress-bar" style={data[activeTab].progressBar2} />
                 </div>
                 <div className="container  px-2">
-                    <div className="progress-bar" style={{ width: data[activeTab].labels[0], marginRight: '5px' }}>
+                    <div className="" style={{ width: data[activeTab].labels[0], marginRight: '5px' }}>
                         <span className="label">{data[activeTab].labels[0]}</span>
                     </div>
-                    <div className="progress-bar" style={{ width: data[activeTab].labels[1], marginRight: '5px' }}>
+                    <div className="" style={{ width: data[activeTab].labels[1], marginRight: '5px' }}>
                         <span className="label">{data[activeTab].labels[1]}</span>
                     </div>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <div style={{ width: '95%', display: 'grid', justifyItems: 'center', alignItems: 'center' ,borderRadius: '12px', height:'108px', backgroundColor:'#FAF8FF', marginTop:'2rem' }}>
+                    <div style={{ width: '95%', display: 'grid', justifyItems: 'center', alignItems: 'center' ,borderRadius: '12px', height:'108px', backgroundColor:'#FAF8FF', marginTop:'1rem' }}>
                         {data[activeTab].textOverview.map((item, index) => (
                             <span key={index} className="text-overview" style={{borderLeft:`5px solid ${item.borderLeftColor}`}}>{item.text}</span>
                         ))}

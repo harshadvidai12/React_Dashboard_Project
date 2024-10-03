@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../assets/styles/Table.css';
+import styles from '../assets/styles/Table.module.css';
 import ViewIcon from '../assets/images/eye.svg';
 import AddIcon from '../assets/images/AddIcon.svg';
 import FilterIcon from '../assets/images/FilterIcon.svg';
@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const patients = [
   {
-    name: 'Ralph Edwards',
+    name: 'Emma Watson',
     mrNumber: 'SDF45678543',
     gender: 'Female',
     accession: '123RND',
@@ -18,17 +18,57 @@ const patients = [
     status: 'Completed',
   },
   {
-    name: 'Ralph Edwards',
+    name: 'Emma Watson',
     mrNumber: 'SDF45678543',
     gender: 'Female',
     accession: '123RND',
     doctor: 'Darlene Robert',
     notes: 'Completed',
+    result: 'N/A',
+    status: 'Pending',
+  },
+  {
+    name: 'Emma Watson',
+    mrNumber: 'SDF45678543',
+    gender: 'Female',
+    accession: '123RND',
+    doctor: 'Kathryn Murphy',
+    notes: 'Pending',
+    result: 'N/A',
+    status: 'Pending',
+  },
+  {
+    name: 'Emma Watson',
+    mrNumber: 'SDF45678543',
+    gender: 'Female',
+    accession: '123RND',
+    doctor: 'Kathryn Murphy',
+    notes: 'Pending',
     result: 'Released',
     status: 'Completed',
   },
   {
-    name: 'Ralph Edwards',
+    name: 'Emma Watson',
+    mrNumber: 'SDF45678543',
+    gender: 'Female',
+    accession: '169RND',
+    doctor: 'Kathryn Murphy',
+    notes: 'Pending',
+    result: 'N/A',
+    status: 'Pending',
+  },
+  {
+    name: 'Emma Watson',
+    mrNumber: 'SDF45678543',
+    gender: 'Female',
+    accession: '123RND',
+    doctor: 'Kathryn Murphy',
+    notes: 'Pending',
+    result: 'Released',
+    status: 'Completed',
+  },
+  {
+    name: 'Emma Watson',
     mrNumber: 'SDF45678543',
     gender: 'Female',
     accession: '123RND',
@@ -38,7 +78,17 @@ const patients = [
     status: 'Pending',
   },
   {
-    name: 'Ralph Edwards',
+    name: 'Emma Watson',
+    mrNumber: 'SDF45678543',
+    gender: 'Female',
+    accession: '169RND',
+    doctor: 'Kathryn Murphy',
+    notes: 'Pending',
+    result: 'Released',
+    status: 'Completed',
+  },
+  {
+    name: 'Emma Watson',
     mrNumber: 'SDF45678543',
     gender: 'Female',
     accession: '123RND',
@@ -48,7 +98,7 @@ const patients = [
     status: 'Pending',
   },
   {
-    name: 'Ralph Edwards',
+    name: 'Emma Watson',
     mrNumber: 'SDF45678543',
     gender: 'Female',
     accession: '123RND',
@@ -58,60 +108,10 @@ const patients = [
     status: 'Pending',
   },
   {
-    name: 'Ralph Edwards',
+    name: 'Emma Watson',
     mrNumber: 'SDF45678543',
     gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Ralph Edwards',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Ralph Edwards',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',  
-  },
-  {
-    name: 'Ralph Edwards',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Ralph Edwards',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Ralph Edwards',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
+    accession: '169RND',
     doctor: 'Kathryn Murphy',
     notes: 'Pending',
     result: 'N/A',
@@ -129,9 +129,9 @@ const PatientList = () => {
         <div className='subTitleFont p-2'>
           <div className='d-flex justify-content-between align-items-center'>
 
-            <div className='headerNameCss'>Patient</div>
+            <div className={styles.headerNameCss}>Patient</div>
 
-            <div className="d-flex flex-wrap gap-2 align-items-center ">
+            <div className="d-flex flex-wrap gap-2 align-items-center " >
               <div className="search-container">
                 <input type="text" className="form-control border" placeholder="Search by Name, Case ID, Accession" />
               </div>
@@ -145,35 +145,34 @@ const PatientList = () => {
           </div>
         </div>
 
-        <div className="row mx-2 p-1 bg-light rounded patientPara px-4 mb-2">
-          <div className="col-3 align-items-center align-content-center align-middle p-1">
-
+        <div className="row mx-2 p-1 bg-light rounded patientPara px-4 mb-2 justify-content-between">
+        <div className={styles.checkboxText}>
             <input className="custom-checkbox" type="checkbox" id="flexCheckDefault1" />
-            <span className='checkBoxLabel'>
+            <span className={styles.checkBoxLabel}>
               No Transferable Embryos
             </span>
 
           </div>
-          <div className="col-3 align-items-center align-content-center align-middle p-1">
+          <div className={styles.checkboxText}>
 
             <input className="custom-checkbox" type="checkbox" id="flexCheckDefault2" />
-            <span className='checkBoxLabel'>
+            <span className={styles.checkBoxLabel}>
               All Transferable Embryos
             </span>
 
           </div>
-          <div className="col-3 align-items-center align-content-center align-middle p-1">
+          <div className={styles.checkboxText}>
 
             <input className="custom-checkbox" type="checkbox" id="flexCheckDefault3" />
-            <span className='checkBoxLabel'>
+            <span className={styles.checkBoxLabel}>
               Draft Patients
             </span>
 
           </div>
-          <div className="col-3 align-items-center align-content-center align-middle p-1">
+          <div className={styles.checkboxText}>
 
             <input className="custom-checkbox" type="checkbox" id="flexCheckDefault4" />
-            <span className='checkBoxLabel'>
+            <span className={styles.checkBoxLabel}>
               International Patients
             </span>
 
@@ -209,11 +208,11 @@ const PatientList = () => {
                 </td>
                 <td><b>{patient.accession}</b></td>
                 <td><b>{patient.doctor}</b></td>
-                <td><img src={ViewIcon} alt="View" className={styles.icon} /><span className={styles.anchorTag}>View</span></td>
-                <td><img src={UploadIcon} alt="Upload" className={styles.icon} /><span className={styles.uploadTag}>View</span></td>
-                <td><img src={UploadIcon} alt="Upload" className={styles.icon} /><span className={styles.uploadTag}>View</span></td>
-                <td><b>{patient.result}</b></td>
-                <td><img src={ViewIcon} alt="View" className={styles.icon} /><span className={styles.anchorTag}>View</span></td>
+                <td><span  className={styles.icon}><img src={ViewIcon} alt="View" /><span className={styles.anchorTag}>View</span> </span></td>
+                <td><span  className={styles.icon}> <img src={UploadIcon} alt="Upload"/><span className={styles.uploadTag}>View</span></span></td>
+                <td> <span  className={styles.icon}><img src={UploadIcon} alt="Upload" /><span className={styles.uploadTag}>View</span></span></td>
+                <td> <b>{patient.result}</b> </td>
+                <td> <span  className={styles.icon}><img src={ViewIcon} alt="View"/><span className={styles.anchorTag}>View</span> </span></td>
                 <td>
                   <span className={patient.status === 'Completed' ? styles.completed : styles.pending}>
                     {patient.status}
