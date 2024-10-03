@@ -314,13 +314,6 @@ function Header({
           <Button type="link" style={{paddingRight: '0'}} onClick={showDrawer}>
           <img src={message} alt="" />
           </Button>
-          <Button
-            type="link"
-            className="sidebar-toggler"
-            onClick={() => onPress()}
-          >
-            {toggler}
-          </Button>
           <Drawer
             className="settings-drawer"
             mask={true}
