@@ -4,7 +4,7 @@ import ViewIcon from '../assets/images/eye.svg';
 import AddIcon from '../assets/images/AddIcon.svg';
 import FilterIcon from '../assets/images/FilterIcon.svg';
 import UploadIcon from '../assets/images/document-upload.svg';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const patients = [
   {
