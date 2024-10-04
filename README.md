@@ -1,7 +1,6 @@
 
 
 
-
 # React Dashboard Project 
 
 # Commands For run frontend
@@ -10,13 +9,20 @@
   2. npm start
 
 # Load Dashboard 
+<!-- 
+![LoadDashboard](./React_Dashboard_Project/src/assets/images/Dashboard.png)  -->
 
-![LoadDashboard](./React_Dashboard_Project/src/assets/images/Dashboard.png) 
+
+![LoadDashboard](/React_Dashboard_Project/src/assets/images/Dashboard.png) 
 
 # PatientList
 
-![PatientList](./React_Dashboard_Project/src/assets/images/PatientList.png  )
+<!-- ![PatientList](./React_Dashboard_Project/src/assets/images/PatientList.png  ) -->
+![PatientList](/React_Dashboard_Project/src/assets/images/PatientList.png )
 
 # To view the Perticular Patient Information
 
-![PerticularPatientInfo](./React_Dashboard_Project/src/assets/images/PatientList%20With%20PopUP.png  )
+<!-- ![PerticularPatientInfo](./React_Dashboard_Project/src/assets/images/PatientList%20With%20PopUP.png  ) -->
+
+
+![PerticularPatientInfo](/React_Dashboard_Project/src/assets/images/PatientList%20With%20PopUP.png )
