@@ -1,0 +1,31 @@
+
+
+
+
+.ant-layout.ant-layout-has-sider > .ant-layout,
+.ant-layout.ant-layout-has-sider > .ant-layoutcontent {
+  overflow-x: hidden;
+}
+
+main.ant-layoutcontent.content-ant {
+    padding-left: 0px !important;
+  }
+
+  .layout-default .ant-layoutcontent {
+    padding-top: 40px;
+  }
+
+  .layout-dashboard .ant-layoutcontent {
+    padding: 0;
+    margin: 0 20px 0;
+  }
+  section.ant-layout.layoutcontent .ant-layoutcontent.content-ant {
+    padding: 0px !important;
+  }
+  
+  .layout-default .ant-layoutcontent.p-0 {
+    padding: 0px;
+  }
+  .text{
+    padding-left: 24px !important;
+  }

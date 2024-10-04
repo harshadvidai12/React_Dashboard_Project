@@ -298,11 +298,11 @@ function Sidenav({ color }) {
           </Menu.Item>
         </Menu> */}
 
-        <div class="footerbox">
+        {/* <div class="footerbox">
         <span class="icon" ><img src={bulb} alt="" /></span>
         <h6>Thoughts Time</h6><p>We don’t have any notice for you, till then you can share your thoughts with your peers.</p>
           <button type="button" class="ant-btn css-14qglws  ant-btn-solid ant-btn-sm ant-btn-block"><span>Write a message</span></button>
-        </div>
+        </div> */}
         {/* <div class="footer-box"><span class="icon" style="color: rgb(125, 84, 243);"></span>
           <h6>Thoughts Time</h6><p>We don’t have any notice for you, till then you can share your thoughts with your peers.</p>
           <button type="button" class="ant-btn css-14qglws ant-btn-primary ant-btn-solid ant-btn-sm ant-btn-block"><span>Write a message</span></button>

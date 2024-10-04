@@ -277,9 +277,9 @@ function Header({
 
   return (
     <>
-      <div className="setting-drwer" onClick={showDrawer}>
+      {/* <div className="setting-drwer" onClick={showDrawer}>
         {setting}
-      </div>
+      </div> */}
       <Row gutter={[24, 0]} style={{borderBottom: '1px solid #EFEDF2', paddingBottom:'20px'}}>
         <Col span={24} md={6} className="align-middle">
           {/* <Breadcrumb>

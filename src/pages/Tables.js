@@ -1,127 +1,36 @@
-import React from 'react'
+import React ,{ useState ,useEffect} from 'react'
 import styles from '../assets/styles/Table.module.css';
 import ViewIcon from '../assets/images/eye.svg';
 import AddIcon from '../assets/images/AddIcon.svg';
 import FilterIcon from '../assets/images/FilterIcon.svg';
 import UploadIcon from '../assets/images/document-upload.svg';
+import { patientsList } from '../components/constant/constTable';
 
+const PatientListTable = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedPatient, setSelectedPatient] = useState(null);
 
-const patients = [
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Cody Fisher',
-    notes: 'Completed',
-    result: 'Released',
-    status: 'Completed',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Darlene Robert',
-    notes: 'Completed',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'Released',
-    status: 'Completed',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '169RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'Released',
-    status: 'Completed',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '169RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'Released',
-    status: 'Completed',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '123RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  },
-  {
-    name: 'Emma Watson',
-    mrNumber: 'SDF45678543',
-    gender: 'Female',
-    accession: '169RND',
-    doctor: 'Kathryn Murphy',
-    notes: 'Pending',
-    result: 'N/A',
-    status: 'Pending',
-  }
-  
+  const handlePatientClick = (patient) => {
 
-  // Add more patients as per the image...
-];
-const PatientList = () => {
+    setSelectedPatient(patient);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (showModal && !event.target.closest('.modal-content')) {
+        handleCloseModal();
+      }
+    };
+
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [showModal]);
   return (
     <div>
       <div className={styles.tableContainer} style={{height: 'calc(100vh - 228px)'}}>
@@ -196,8 +105,8 @@ const PatientList = () => {
             </tr>
           </thead>
           <tbody>
-            {patients.map((patient, index) => (
-              <tr key={index}>
+            {patientsList.map((patient, index) => (
+              <tr key={index} onClick={() => handlePatientClick(patient)}>
                 <td>
                   <div className={styles.patientInfo}>
                     <div style={{ fontWeight: '700' }}>{patient.name}</div>
@@ -227,7 +136,7 @@ const PatientList = () => {
       <div className={styles.footer}>
         <div className={styles.totalContainer}>
           <span>Total :</span>
-          <span className={styles.totalNumber}>{patients.length}</span>
+          <span className={styles.totalNumber}>{patientsList.length}</span>
         </div>
         <div className={styles.statusContainer}>
           <div className={styles.statusItem}>
@@ -245,9 +154,39 @@ const PatientList = () => {
         </div>
       </div>
     </div>
+    {showModal && (
+        <div className="modal" style={{ display: 'block' }}>
+          <div className="modal-dialog modal-dialog-centered">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">Patient Details</h5>
+                <button type="button" className="close" onClick={handleCloseModal}>
+                  <span>&times;</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                <h5>Patient Name: {selectedPatient.name}</h5>
+                <p>MR Number: {selectedPatient.mrNumber}</p>
+                <p>Gender: {selectedPatient.gender}</p>
+                <p>Accession#: {selectedPatient.accession}</p>
+                <p>Doctor: {selectedPatient.doctor}</p>
+                <p>Notes: {selectedPatient.notes}</p>
+                <p>Result: {selectedPatient.result}</p>
+                <p>Status: {selectedPatient.status}</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+          </div>
+          )}
+
     </div>
 
   )
 }
 
-export default PatientList
+export default PatientListTable

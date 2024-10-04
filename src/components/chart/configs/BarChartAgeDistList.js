@@ -1,4 +1,4 @@
-const eChart = {
+const BarChartAgeDistList = {
   series: [
     {
       name: "Sales",
@@ -115,4 +115,4 @@ const eChart = {
   },
 };
 
-export default eChart;
+export default BarChartAgeDistList;

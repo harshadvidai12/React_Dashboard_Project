@@ -1,4 +1,4 @@
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect,useLocation  } from "react-router-dom";
 import Home from "./pages/Home";
 import Tables from "./pages/Tables";
 import Billing from "./pages/Billing";
@@ -12,6 +12,11 @@ import "./assets/styles/main.css";
 import "./assets/styles/responsive.css";
 
 function App() {
+  // const location = useLocation();
+  // if (location.search || location.hash) {
+  //   // If the URL has a query string or hash, redirect to a 404 page or a default route
+  //   return <Redirect to="/404" />;
+  // }
   return (
     <div className="App">
       <Switch>

@@ -1,20 +1,20 @@
 import ReactApexChart from "react-apexcharts";
-import eChart from "./configs/eChart";
+import BarChartAgeDistList from "./configs/BarChartAgeDistList";
 import { Typography } from "antd";
 
-function EChart() {
+function BarChartAgeDist() {
   const { Title } = Typography;
 
   return (
     <>
       <div id="chart">
         <div>
-          <Title level={5} className="header-name">Age Distribution</Title>
+          <Title level={4} className="header-name">Age Distribution</Title>
         </div>
         <ReactApexChart
           className="bar-chart"
-          options={eChart.options}
-          series={eChart.series}
+          options={BarChartAgeDistList.options}
+          series={BarChartAgeDistList.series}
           height={425}
           type="bar"
         />
@@ -23,4 +23,4 @@ function EChart() {
   );
 }
 
-export default EChart;
+export default BarChartAgeDist;
